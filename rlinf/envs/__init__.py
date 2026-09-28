@@ -43,6 +43,7 @@ class SupportedEnvType(Enum):
     D4RL = "d4rl"
     DIFFUSION = "diffusion"
     POLARIS = "polaris"
+    LAPLACIAN_GYM = "laplacian_gym"
 
     @classmethod
     def _missing_(cls, value: object) -> "SupportedEnvType | None":
@@ -165,6 +166,10 @@ def get_env_cls(env_type: str, env_cfg=None):
         from rlinf.envs.sim.genesis.genesis_env import GenesisEnv
 
         return GenesisEnv
+    elif env_type == SupportedEnvType.LAPLACIAN_GYM:
+        from rlinf.envs.sim.laplacian_gym.laplacian_env import LaplacianGymEnv
+
+        return LaplacianGymEnv
     elif env_type == SupportedEnvType.EMBODICHAIN:
         from rlinf.envs.sim.embodichain.embodichain_env import EmbodiChainEnv
 
