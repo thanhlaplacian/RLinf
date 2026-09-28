@@ -131,6 +131,8 @@ SupportedModel.DEEPSEEK_V3 = SupportedModel.register("deepseek_v3", force=True)
 # GLM47FlashBridge (megatron-bridge >=0.5.0). Needs mcore 0.18.
 SupportedModel.GLM4_MOE_LITE = SupportedModel.register("glm4_moe_lite", force=True)
 SupportedModel.GR00T_N1D7 = SupportedModel.register("gr00t_n1d7", force=True)
+# company GR00T N1.7 fork (umi_rl.model); shares the N1.7 RL code paths
+SupportedModel.GR00T_N1D7_UMI = SupportedModel.register("gr00t_n1d7_umi", force=True)
 SupportedModel.EVO1 = SupportedModel.register("evo1", force=True)
 
 DIFFUSION_MODELS = {SupportedModel.SD3, SupportedModel.WAN22_TI2V_5B}
@@ -159,6 +161,7 @@ EMBODIED_MODEL = set(
         SupportedModel.RESNET_REWARD,
         SupportedModel.GR00T_N1D6,
         SupportedModel.GR00T_N1D7,
+        SupportedModel.GR00T_N1D7_UMI,
         SupportedModel.CFG_MODEL,
         SupportedModel.RECAP_VALUE_MODEL,
         SupportedModel.STEAM_VALUE_MODEL,
