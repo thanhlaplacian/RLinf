@@ -783,6 +783,7 @@ class EmbodiedFSDPActor(FSDPModelManager, Worker):
             SupportedModel.GR00T_N1D7,
             SupportedModel.PI0_FAST,
             SupportedModel.GR00T_N1D7_UMI,
+            SupportedModel.UMI_WAM,
         ]:
             loss_kwargs["clip_ratio_c"] = self.cfg.algorithm.get("clip_ratio_c", 3.0)
             if self.cfg.algorithm.get("clip_log_ratio_min") is not None:

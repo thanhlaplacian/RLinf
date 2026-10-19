@@ -133,6 +133,8 @@ SupportedModel.GLM4_MOE_LITE = SupportedModel.register("glm4_moe_lite", force=Tr
 SupportedModel.GR00T_N1D7 = SupportedModel.register("gr00t_n1d7", force=True)
 # company GR00T N1.7 fork (umi_rl.model); shares the N1.7 RL code paths
 SupportedModel.GR00T_N1D7_UMI = SupportedModel.register("gr00t_n1d7_umi", force=True)
+# company world-action model UmiWam v0.18 (umi_rl.wam.policy); N1.7-style flow-SDE PPO surface
+SupportedModel.UMI_WAM = SupportedModel.register("umi_wam", force=True)
 SupportedModel.EVO1 = SupportedModel.register("evo1", force=True)
 
 DIFFUSION_MODELS = {SupportedModel.SD3, SupportedModel.WAN22_TI2V_5B}
@@ -162,6 +164,7 @@ EMBODIED_MODEL = set(
         SupportedModel.GR00T_N1D6,
         SupportedModel.GR00T_N1D7,
         SupportedModel.GR00T_N1D7_UMI,
+        SupportedModel.UMI_WAM,
         SupportedModel.CFG_MODEL,
         SupportedModel.RECAP_VALUE_MODEL,
         SupportedModel.STEAM_VALUE_MODEL,
