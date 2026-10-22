@@ -91,6 +91,12 @@ class MetricLogger:
             ), f"Unsupported logger backend: {self.logger_backends}"
 
         self.config = OmegaConf.to_container(cfg, resolve=True)
+        # The run directory (<log_path>/<experiment_name>/, where the runners write checkpoints/)
+        # keeps the resolved config the run was launched with. The tensorboard copy below sits in
+        # a directory shared by every run and is overwritten at each launch.
+        run_dir = os.path.join(self.log_path, self.experiment_name)
+        os.makedirs(run_dir, exist_ok=True)
+        OmegaConf.save(cfg, os.path.join(run_dir, "config.yaml"), resolve=True)
         self._all_loggers = []
         self._worker_loggers: dict[tuple[str, int], dict] = {}
         self.logger = self._create_logger_bundle(
